@@ -1,0 +1,63 @@
+.underline-animate{
+  display: inline-block;
+  position: relative;
+  color: #000;
+  cursor: pointer;
+}
+
+.underline-animate:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 1s ease;
+}
+
+.animate-1:hover .underline-animate::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+/*  Animate effects on menus or text  */
+
+ul{
+  list-style-type: none;
+  & li{
+    float: left;
+  }
+}
+
+  a{
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    padding: 15px 15px;
+  }
+  a:after{
+    background: none repeat scroll 0 0 transparent;
+    /* bottom: 0; */
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: blue;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  
+  a:hover:after{
+    width: 100%;
+    left: 0;
+  }
+  
+  
+
